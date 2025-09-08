@@ -1,0 +1,69 @@
+{
+  "epics": [
+    {
+      "title": "Data Ingestion & Setup",
+      "tasks": [
+        "Repo/environment setup",
+        "Document ingestion and vectorization",
+        "GraphRAG project graph creation"
+      ]
+    },
+    {
+      "title": "Backend API & Reasoning",
+      "tasks": [
+        "Implement /ask endpoint",
+        "Integrate Weaviate retrieval",
+        "Connect GraphRAG reasoning",
+        "Return answer, explanation bullets, sources"
+      ]
+    },
+    {
+      "title": "Frontend UI & Integration",
+      "tasks": [
+        "Scaffold Next.js UI",
+        "Input box and results panel",
+        "Connect frontend to backend",
+        "Ensure accessibility and UX"
+      ]
+    },
+    {
+      "title": "Testing & Explainability",
+      "tasks": [
+        "Add unit and integration tests",
+        "Polish explanation bullets and source tracing",
+        "Add fallback static example"
+      ]
+    },
+    {
+      "title": "Demo & Documentation",
+      "tasks": [
+        "Finalize documentation",
+        "Prepare and validate demo script"
+      ]
+    }
+  ],
+  "sprints": [
+    {
+      "title": "Sprint 1: Backend & Data",
+      "tasks": [
+        "Set up repo and environments",
+        "Ingest crisis docs, create vectors in Weaviate",
+        "Build GraphRAG project graph",
+        "Implement /ask endpoint (Weaviate + GraphRAG)",
+        "Basic backend tests",
+        "Document setup/usage"
+      ]
+    },
+    {
+      "title": "Sprint 2: Frontend & Integration",
+      "tasks": [
+        "Scaffold Next.js UI (input/results)",
+        "Connect frontend to /ask API",
+        "Accessibility and UX polish",
+        "Add fallback static example",
+        "End-to-end tests",
+        "Finalize documentation and demo script"
+      ]
+    }
+  ]
+}
