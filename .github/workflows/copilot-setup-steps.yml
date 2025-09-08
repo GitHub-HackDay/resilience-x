@@ -1,0 +1,28 @@
+name: copilot-setup-steps
+on:
+  workflow_call:
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install uv + deps
+        run: |
+          pipx install uv
+          uv sync
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install web deps
+        run: npm ci --prefix apps/web
+
+      - name: Cache Weaviate Docker image (best effort)
+        run: docker pull semitechnologies/weaviate:latest || true
