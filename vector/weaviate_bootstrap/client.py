@@ -34,18 +34,27 @@ class WeaviateClient:
             True if connection successful, False otherwise
         """
         try:
+            # Configure additional settings to handle connection issues
+            additional_config = wvc.init.AdditionalConfig(
+                timeout=wvc.init.Timeout(init=60, query=60, insert=60),
+            )
+            
             if self.api_key:
                 auth_config = Auth.api_key(self.api_key)
                 self.client = weaviate.connect_to_custom(
                     http_host=self.url.replace("http://", "").replace("https://", ""),
                     http_port=8080,
                     http_secure=False,
-                    auth_credentials=auth_config
+                    auth_credentials=auth_config,
+                    additional_config=additional_config,
+                    skip_init_checks=True
                 )
             else:
                 self.client = weaviate.connect_to_local(
                     host=self.url.replace("http://", "").replace("https://", "").split(":")[0],
-                    port=8080
+                    port=8080,
+                    additional_config=additional_config,
+                    skip_init_checks=True
                 )
             
             # Test connection
@@ -66,7 +75,8 @@ class WeaviateClient:
         try:
             # Check if collection already exists
             collections = self.client.collections.list_all()
-            if "CrisisDocument" in [c.name for c in collections]:
+            collection_names = [c.name if hasattr(c, 'name') else str(c) for c in collections]
+            if "CrisisDocument" in collection_names:
                 logger.info("CrisisDocument collection already exists")
                 return True
             
@@ -74,7 +84,7 @@ class WeaviateClient:
             self.client.collections.create(
                 name="CrisisDocument",
                 description="Crisis recovery documents for Q&A system",
-                vectorizer_config=wvc.config.Configure.Vectorizer.none(),
+                vector_config=wvc.config.Configure.VectorIndex.none(),
                 properties=[
                     wvc.config.Property(
                         name="title",
