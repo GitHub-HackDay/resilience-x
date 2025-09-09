@@ -4,9 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
+**/node_modules/
 
 # testing
 /coverage
+.pytest_cache/
+test-results/
+playwright-report/
 
 # next.js
 /.next/
@@ -14,6 +18,7 @@
 
 # production
 /build
+/dist/
 
 # misc
 .DS_Store
@@ -34,3 +39,50 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Docker
+docker-compose.override.yml
+
+# Data and logs
+*.log
+logs/
+data/
+weaviate_data/
+
+# GraphRAG
+rag/graphrag_project/output/
+rag/graphrag_project/cache/
