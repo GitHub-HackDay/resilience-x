@@ -1,0 +1,1 @@
+"""Resilience-X API application."""
