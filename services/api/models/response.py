@@ -32,8 +32,8 @@ class AskResponse(BaseModel):
     explanation_bullets: List[ExplanationBullet] = Field(..., description="Step-by-step reasoning explanation")
     sources: List[Source] = Field(..., description="All sources referenced in explanation")
     
-    class Config:
-        schema_extra = {
+    model_config = {
+        "json_schema_extra": {
             "example": {
                 "answer": "Cleanup is delayed in King County due to crew shortages and debris overflow.",
                 "explanation_bullets": [
@@ -67,3 +67,4 @@ class AskResponse(BaseModel):
                 ]
             }
         }
+    }
