@@ -42,10 +42,20 @@ class WeaviateClient:
             True if connection successful, False otherwise
         """
         try:
+            # Parse URL to extract host and port
+            url_parts = self.url.replace("http://", "").replace("https://", "")
+            if ":" in url_parts:
+                host, port = url_parts.split(":")
+                port = int(port)
+            else:
+                host = url_parts
+                port = 8080
+                
             self._client = weaviate.connect_to_local(
-                host=self.url.replace("http://", "").replace("https://", ""),
-                port=8080
+                host=host,
+                port=port
             )
+            
             # Test connection
             self._client.is_ready()
             logger.info(f"Successfully connected to Weaviate at {self.url}")
@@ -110,34 +120,37 @@ class WeaviateClient:
             
         try:
             # Check if collection exists
-            collections = self._client.collections.list_all()
-            if "Document" not in [c.name for c in collections]:
-                # Create the Document collection
-                self._client.collections.create(
-                    name="Document",
-                    vectorizer_config=Configure.Vectorizer.text2vec_openai(
-                        model="ada",
-                        model_version="002"
+            try:
+                self._client.collections.get("Document")
+                logger.info("Document collection already exists")
+                return True
+            except weaviate.exceptions.UnexpectedStatusCodeError:
+                # Collection doesn't exist, create it
+                pass
+            
+            # Create the Document collection with text2vec-transformers (no OpenAI key needed for demo)
+            self._client.collections.create(
+                name="Document",
+                vectorizer_config=Configure.Vectorizer.text2vec_transformers(),
+                properties=[
+                    weaviate.classes.config.Property(
+                        name="content",
+                        data_type=weaviate.classes.config.DataType.TEXT,
+                        description="Document content"
                     ),
-                    properties=[
-                        weaviate.classes.config.Property(
-                            name="content",
-                            data_type=weaviate.classes.config.DataType.TEXT,
-                            description="Document content"
-                        ),
-                        weaviate.classes.config.Property(
-                            name="source",
-                            data_type=weaviate.classes.config.DataType.TEXT,
-                            description="Document source/filename"
-                        ),
-                        weaviate.classes.config.Property(
-                            name="title",
-                            data_type=weaviate.classes.config.DataType.TEXT,
-                            description="Document title"
-                        )
-                    ]
-                )
-                logger.info("Created Document collection schema")
+                    weaviate.classes.config.Property(
+                        name="source", 
+                        data_type=weaviate.classes.config.DataType.TEXT,
+                        description="Document source/filename"
+                    ),
+                    weaviate.classes.config.Property(
+                        name="title",
+                        data_type=weaviate.classes.config.DataType.TEXT,
+                        description="Document title"
+                    )
+                ]
+            )
+            logger.info("Created Document collection schema with transformers vectorizer")
             return True
         except Exception as e:
             logger.error(f"Error creating schema: {str(e)}")
