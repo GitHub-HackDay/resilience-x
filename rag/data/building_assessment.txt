@@ -1,0 +1,14 @@
+Building Damage Assessment Protocol
+
+Following a natural disaster, building safety assessments must be conducted before allowing occupancy. The assessment process involves three phases:
+
+1. Rapid Visual Screening: Initial 15-minute exterior inspection to identify obvious structural damage
+2. Detailed Assessment: Comprehensive structural evaluation taking 2-4 hours per building
+3. Engineering Evaluation: Required for buildings with significant damage, conducted by licensed structural engineers
+
+Buildings are tagged with color-coded placards:
+- Green: Safe for occupancy
+- Yellow: Limited entry for essential items only
+- Red: Unsafe, no entry permitted
+
+Assessment teams should consist of qualified building inspectors or engineers with emergency response training. All assessments must be documented with photos and GPS coordinates.

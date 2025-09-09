@@ -1,0 +1,23 @@
+Emergency Medical Response Coordination
+
+Medical response during disasters requires rapid triage and resource allocation:
+
+Immediate Response (0-4 hours):
+- Establish incident command structure with medical operations chief
+- Deploy search and rescue teams with medical personnel
+- Set up temporary medical treatment areas near incident sites
+- Activate mutual aid agreements with neighboring medical facilities
+
+Triage Categories:
+- Red: Immediate life-threatening injuries requiring urgent care
+- Yellow: Delayed treatment, stable but requiring medical attention within 2-4 hours
+- Green: Minor injuries, can wait several hours for treatment
+- Black: Deceased or injuries incompatible with survival given available resources
+
+Resource Management:
+- Track available hospital beds regionally
+- Coordinate ambulance services and medical transport
+- Manage medical supply distribution from stockpiles
+- Establish pharmaceutical distribution points for chronic medication needs
+
+Medical facilities should maintain 72-hour operational capability with backup power, water, and medical supplies.
