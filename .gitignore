@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+node_modules/
 
 # testing
 /coverage
@@ -14,6 +15,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -34,3 +36,53 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv
+ENV/
+env.bak/
+venv.bak/
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# UV
+.uv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Docker
+.docker/
+
+# GraphRAG artifacts
+rag/graphrag_project/output/
+rag/graphrag_project/cache/
+rag/graphrag_project/.env
+
+# Weaviate data
+weaviate_data/
+
+# Temporary files
+tmp/
+temp/
+.tmp/
