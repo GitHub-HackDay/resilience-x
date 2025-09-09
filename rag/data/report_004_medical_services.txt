@@ -1,0 +1,31 @@
+CRISIS REPORT 004: Medical Services and Healthcare Facilities
+Date: March 16, 2024
+Report ID: MED-2024-004
+
+SUMMARY:
+Regional healthcare facilities are managing increased patient loads while dealing with infrastructure challenges. Emergency medical services remain operational with modified protocols.
+
+HOSPITAL STATUS:
+- Overlake Medical Center (Bellevue): Operating on backup power, full capacity
+- EvergreenHealth (Kirkland): Main power restored, accepting emergency transfers
+- Redmond Medical Center: Limited operations due to water pressure issues
+
+EMERGENCY SERVICES:
+- Ambulance services: Response times increased 40% due to road closures
+- Medic One units: 2 additional units deployed from Seattle to support region
+- Alternative transport routes identified for critical cases
+
+PATIENT IMPACTS:
+- Dialysis patients: Temporary relocation to Overlake for Rose Hill residents  
+- Elderly residents in Woodinville: Increased medical calls due to power outages
+- Chronic condition patients: Medication access issues in isolated areas
+
+SUPPLY CHAIN:
+- Medical oxygen: Adequate supplies, delivery routes established
+- Prescription medications: Pharmacies in affected areas operating on generator power
+- Emergency medical supplies: Regional stockpile activated, supplies distributed
+
+COORDINATION:
+- Joint operations center established at Overlake Medical Center
+- Direct communication link with emergency shelters for medical needs
+- Volunteer medical personnel from Seattle area providing additional support

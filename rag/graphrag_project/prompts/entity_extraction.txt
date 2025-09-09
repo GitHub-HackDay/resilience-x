@@ -1,0 +1,32 @@
+-Goal-
+Given a text document about crisis recovery operations, identify all entities mentioned and their relationships. Focus on locations, organizations, resources, incidents, and timeframes relevant to emergency response and recovery efforts.
+
+-Steps-
+1. Identify all entities mentioned in the text
+2. For each entity, extract its type, description, and importance to crisis recovery
+3. Identify relationships between entities
+4. Rate the strength and importance of each relationship
+
+-Entity Types-
+* LOCATION: Geographic areas, neighborhoods, roads, facilities, shelters
+* ORGANIZATION: Government agencies, utility companies, medical facilities, emergency services
+* RESOURCE: Equipment, supplies, personnel, infrastructure, capacity
+* INCIDENT: Specific crisis events, outages, damage, disruptions
+* TIMEFRAME: Dates, durations, timelines, deadlines for recovery actions
+
+-Format-
+For each entity, provide:
+("entity"<|>ENTITY_TYPE<|>"description of entity and its role in crisis recovery"<|>IMPORTANCE_SCORE)
+
+For each relationship, provide:
+("source_entity"<|>"target_entity"<|>"description of relationship in crisis context"<|>STRENGTH_SCORE)
+
+-Examples-
+("Redmond Community Center"<|>LOCATION<|>"Emergency shelter providing temporary housing for displaced residents during crisis"<|>9)
+("Power outage"<|>INCIDENT<|>"Widespread electrical service disruption affecting multiple neighborhoods and emergency operations"<|>8)
+("Redmond Community Center"<|>"Power outage"<|>"Shelter operations may be impacted by electrical service disruptions in the area"<|>7)
+
+-Real Data-
+Text: {input_text}
+
+Output:

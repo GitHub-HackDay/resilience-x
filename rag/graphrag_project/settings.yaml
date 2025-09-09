@@ -1,0 +1,90 @@
+# GraphRAG Configuration for Resilience-X Crisis Recovery Q&A
+# This configuration is optimized for a small dataset of crisis recovery documents
+
+input:
+  type: file
+  base_dir: "../data"  # Path to the crisis recovery documents
+  file_pattern: "*.txt"  # Process all .txt files
+
+cache:
+  type: memory
+  base_dir: "cache"
+
+storage:
+  type: memory
+  base_dir: "output"
+
+reporting:
+  type: file
+  base_dir: "reports"
+
+llm:
+  api_key: ${OPENAI_API_KEY}
+  type: openai_chat
+  model: gpt-3.5-turbo-16k
+  max_tokens: 2000
+  temperature: 0.0
+  top_p: 1.0
+  request_timeout: 30.0
+  api_base: null
+  api_version: null
+  proxy: null
+  max_retries: 3
+  sleep_on_rate_limit_recommendation: true
+
+parallelization:
+  stagger: 0.3
+  num_threads: 1  # Keep low for small dataset
+
+async_mode: threaded
+
+embeddings:
+  async_mode: threaded
+  llm:
+    api_key: ${OPENAI_API_KEY}
+    type: openai_embedding
+    model: text-embedding-ada-002
+    max_tokens: 8191
+    request_timeout: 30.0
+    api_base: null
+    api_version: null
+    proxy: null
+    max_retries: 3
+
+chunks:
+  size: 300  # Smaller chunks for crisis reports
+  overlap: 50
+  group_by_columns: [id]
+
+# Entity and relationship extraction settings optimized for crisis recovery
+entity_extraction:
+  entity_types: [
+    "LOCATION",      # Geographic areas, neighborhoods, roads, facilities
+    "ORGANIZATION",  # Government agencies, utility companies, medical facilities  
+    "RESOURCE",      # Equipment, supplies, personnel, infrastructure
+    "INCIDENT",      # Specific crisis events, outages, damage
+    "TIMEFRAME"      # Dates, durations, timelines for recovery
+  ]
+  max_gleanings: 2  # Limited iterations for efficiency
+
+community_reports:
+  max_length: 1000  # Shorter reports for crisis context
+  max_input_length: 8000
+
+global_search:
+  max_tokens: 8000
+  data_max_tokens: 4000
+  map_max_tokens: 2000
+  reduce_max_tokens: 2000
+
+local_search:
+  max_tokens: 8000
+  text_unit_prop: 0.5
+  community_prop: 0.3
+  conversation_history_max_turns: 3
+  top_k_mapped_entities: 5
+  top_k_relationships: 5
+
+# Encoding settings
+encoding_model: cl100k_base
+skip_workflows: []

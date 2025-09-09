@@ -1,0 +1,27 @@
+CRISIS REPORT 003: Utility Service Disruptions
+Date: March 15, 2024  
+Report ID: UT-2024-003
+
+SUMMARY:
+Widespread power and water service disruptions continue across multiple service areas. Utility crews are working around the clock but face significant challenges.
+
+POWER OUTAGES:
+- Puget Sound Energy: 45,000 customers without power
+  - Redmond area: 12,000 customers affected (Downtown, Rose Hill)  
+  - Kirkland: 8,000 customers affected (Juanita, Totem Lake)
+  - Woodinville: 25,000 customers affected (majority of city)
+
+WATER SERVICE:
+- City of Redmond: Main supply intact, localized outages in Rose Hill due to broken mains
+- Kirkland Water Department: Boil water advisory for Juanita neighborhood  
+- Woodinville: Water treatment facility damaged, emergency trucked water being distributed
+
+RESTORATION TIMELINE:
+- Power restoration: 24-72 hours depending on location
+- Water service: Rose Hill repairs expected within 12 hours
+- Woodinville water facility: 5-7 days for full restoration
+
+CREW DEPLOYMENT:
+- PSE has deployed 150 line crews (includes mutual aid from Oregon utilities)
+- Water repair crews: 8 teams working on Rose Hill main breaks
+- Bottleneck: Access to damaged areas blocked by fallen trees and debris on roads

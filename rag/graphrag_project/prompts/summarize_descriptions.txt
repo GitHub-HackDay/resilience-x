@@ -1,0 +1,55 @@
+-Goal-
+Given a list of entities and relationships from crisis recovery documents, create a comprehensive summary that captures the key themes, critical issues, and recovery priorities. Focus on actionable insights for emergency response coordination.
+
+-Steps-
+1. Analyze all entities and their relationships within the crisis recovery context
+2. Identify critical bottlenecks, resource constraints, and coordination challenges
+3. Summarize recovery priorities and interdependencies
+4. Highlight areas needing immediate attention or additional resources
+
+-Focus Areas-
+* Infrastructure status and repair priorities
+* Resource availability and constraints  
+* Population impacts and shelter needs
+* Service restoration timelines and dependencies
+* Coordination challenges between agencies
+* Critical path items blocking recovery progress
+
+-Format-
+Provide a structured summary including:
+
+**CRITICAL ISSUES:**
+- List the most urgent problems identified
+- Include impact assessment and affected areas
+
+**RESOURCE CONSTRAINTS:**
+- Personnel, equipment, and supply shortages
+- Capacity limitations at facilities
+
+**RECOVERY PRIORITIES:**
+- Immediate actions (0-24 hours)
+- Short-term goals (1-3 days)  
+- Medium-term objectives (3-7 days)
+
+**COORDINATION NEEDS:**
+- Inter-agency dependencies
+- Communication challenges
+- Resource sharing requirements
+
+**AFFECTED AREAS:**
+- Geographic locations by impact severity
+- Population displacement and service needs
+
+-Examples-
+**CRITICAL ISSUES:**
+- I-405 closure affecting 50,000+ daily commuters due to landslide debris
+- Kirkland shelters at full capacity with no additional intake capability
+
+**RESOURCE CONSTRAINTS:**  
+- Only 3 of 8 normal debris clearing crews available
+- Missing 2 bulldozers for critical infrastructure repairs
+
+-Real Data-
+Entity and Relationship Data: {input_text}
+
+Output:
