@@ -8,7 +8,7 @@ import pytest
 from fastapi.testclient import TestClient
 from unittest.mock import AsyncMock, patch
 
-from services.api.main import app
+from main import app
 
 
 class TestAskEndpoint:
@@ -24,8 +24,8 @@ class TestAskEndpoint:
         request_data = {"question": "Which areas have cleanup delays?"}
         
         # Mock the clients to be available
-        with patch('services.api.main.graphrag_client') as mock_graphrag, \
-             patch('services.api.main.weaviate_client') as mock_weaviate:
+        with patch('main.graphrag_client') as mock_graphrag, \
+             patch('main.weaviate_client') as mock_weaviate:
             
             # Configure mocks
             mock_weaviate.search_documents = AsyncMock(return_value=[
@@ -63,8 +63,8 @@ class TestAskEndpoint:
         request_data = {"question": "Test question"}
         
         # Mock clients as None (not initialized)
-        with patch('services.api.main.graphrag_client', None), \
-             patch('services.api.main.weaviate_client', None):
+        with patch('main.graphrag_client', None), \
+             patch('main.weaviate_client', None):
             
             response = self.client.post("/ask", json=request_data)
             

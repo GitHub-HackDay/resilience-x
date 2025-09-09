@@ -12,8 +12,8 @@ import logging
 import asyncio
 from contextlib import asynccontextmanager
 
-from .clients.graphrag_client import GraphRAGClient
-from .clients.weaviate_client import WeaviateClient
+from clients.graphrag_client import GraphRAGClient
+from clients.weaviate_client import WeaviateClient
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
