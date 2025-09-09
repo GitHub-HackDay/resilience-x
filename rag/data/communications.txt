@@ -1,0 +1,21 @@
+Emergency Communication Systems
+
+During crisis events, maintaining communication is essential for coordination and public safety:
+
+Primary Communication Methods:
+- Amateur radio networks (HAM radio) for emergency services coordination
+- Emergency broadcast systems for public information
+- Satellite phones for areas with damaged cellular infrastructure
+- Social media monitoring for situational awareness
+
+Communication Priorities:
+1. Life safety communications (search and rescue, medical emergencies)
+2. Infrastructure status updates (power, water, roads)
+3. Public information and evacuation orders
+4. Resource coordination between agencies
+
+Backup Systems:
+- Mobile cell towers can be deployed within 24-48 hours
+- Mesh networks for local area communication
+- Emergency messaging systems through local television and radio
+- Door-to-door notification teams in affected neighborhoods
